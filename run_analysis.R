@@ -55,4 +55,4 @@ relevant_data[["Activity"]] <- factor(relevant_data[, "Activity"]
 tidy_dataset<-relevant_data %>% group_by(Subject,Activity) %>% summarise(across(where(is.numeric), mean)) %>% as.data.frame()
 
 #write the tidy dataset to a file
-write.csv(tidy_dataset,file="tidy_dataset.csv", row.names = FALSE)
+write.table(tidy_dataset,file="tidy_dataset.txt", row.names = FALSE)
